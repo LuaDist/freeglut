@@ -1,0 +1,10 @@
+--- This file is part of LuaDist project
+
+name = "freeglut"
+version = "2.6.0"
+
+desc = "FreeGLUT is a free alternative GLUT library."
+author = "Pawel W. Olszta & contributors"
+license = "X-Consortium style license"
+url = "http://freeglut.sourceforge.net"
+maintainer = "Peter Kapec"
