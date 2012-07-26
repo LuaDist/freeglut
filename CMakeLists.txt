@@ -40,8 +40,8 @@ check_include_files ( unistd.h HAVE_UNISTD_H )
 #/* Define to 1 if you have the `vprintf' function. */
 check_function_exists ( vprintf HAVE_VPRINTF )
 if ( NOT HAVE_VPRINTF )
- #/* Define to 1 if you don't have `vprintf' but do have `_doprnt.' */
- check_function_exists ( _doprnt HAVE_DOPRNT )
+  #/* Define to 1 if you don't have `vprintf' but do have `_doprnt.' */
+  check_function_exists ( _doprnt HAVE_DOPRNT )
 endif ( )
 
 check_include_files ( "X11/extensions/xf86vmode.h" HAVE_X11_EXTENSIONS_XF86VMODE_H )
@@ -63,7 +63,7 @@ check_include_files ( "stdlib.h;stdarg.h;string.h;float.h" STDC_HEADERS )
 
 #/* Define to 1 if the X Window System is missing or not being used. */
 if ( NOT HAVE_X11 )
- set ( X_DISPLAY_MISSING 1 )
+  set ( X_DISPLAY_MISSING 1 )
 endif ( )
 
 #/* Define to empty if `const' does not conform to ANSI C. */
@@ -88,15 +88,15 @@ include_directories ( "include" "src" )
 file ( GLOB SRC_FREEGLUTLIB "src/*.c" )
 
 if ( MSVC )
- set ( DEF_FILE src/freeglut.def )
+  set ( DEF_FILE src/freeglut.def )
 endif ( )
 
-add_library ( freeglut SHARED ${SRC_FREEGLUTLIB} ${DEF_FILE} )
+add_library ( freeglut ${SRC_FREEGLUTLIB} ${DEF_FILE} )
 
 if ( CYGWIN OR MSYS OR MINGW OR MSVC )
- #ADD_DEFINITIONS(-mthreads -Wall -O2 -DNDEBUG -DWIN32 -D_MBCS -D_USRDLL -DFREEGLUT_EXPORTS)
- add_definitions ( -DWIN32 -DFREEGLUT_EXPORTS )
- target_link_libraries ( freeglut winmm user32 gdi32 ${OPENGL_LIBRARIES} )
+  #ADD_DEFINITIONS(-mthreads -Wall -O2 -DNDEBUG -DWIN32 -D_MBCS -D_USRDLL -DFREEGLUT_EXPORTS)
+  add_definitions ( -DWIN32 -DFREEGLUT_EXPORTS )
+  target_link_libraries ( freeglut winmm user32 gdi32 ${OPENGL_LIBRARIES} )
 elseif ( UNIX )
 find_package ( X11 REQUIRED )
 include_directories ( ${X11_INCLUDE_DIR} )
