@@ -1,0 +1,50 @@
+type = "x86"
+arch = "Windows"
+author = "Pawel W. Olszta & contributors"
+desc = "FreeGLUT is a free alternative GLUT library."
+name = "freeglut"
+maintainer = "Peter Kapec"
+files = {
+Runtime = {
+[[bin\libfreeglut.dll]],
+}
+,
+Header = {
+[[include\\GL\freeglut.h]],
+[[include\\GL\freeglut_ext.h]],
+[[include\\GL\freeglut_std.h]],
+[[include\\GL\glut.h]],
+[[include\\GL\Makefile.am]],
+[[include\\GL\Makefile.in]],
+[[include\\Makefile.am]],
+[[include\\Makefile.in]],
+}
+,
+Documentation = {
+[[share\freeglut\doc\\download.html]],
+[[share\freeglut\doc\\freeglut.html]],
+[[share\freeglut\doc\\freeglut_logo.png]],
+[[share\freeglut\doc\\freeglut_user_interface.html]],
+[[share\freeglut\doc\\index.html]],
+[[share\freeglut\doc\\Makefile.am]],
+[[share\freeglut\doc\\Makefile.in]],
+[[share\freeglut\doc\\ogl_sm.png]],
+[[share\freeglut\doc\\progress.html]],
+[[share\freeglut\doc\\structure.html]],
+}
+,
+Data = {
+[[share\freeglut\AUTHORS]],
+[[share\freeglut\COPYING]],
+[[share\freeglut\README]],
+}
+,
+Library = {
+[[lib\libfreeglut.dll.a]],
+}
+,
+}
+
+license = "X-Consortium style license"
+url = "http://freeglut.sourceforge.net"
+version = "2.6.0"
